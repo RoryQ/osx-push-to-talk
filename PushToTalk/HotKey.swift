@@ -93,7 +93,7 @@ class HotKey {
         guard theEvent.keyCode == self.keyCode else { return }
         guard self.enabled else { return }
 
-        if theEvent.modifierFlags.contains(self.modifierFlags) {
+        if theEvent.modifierFlags == self.modifierFlags {
             checkForDoubleTap()
             microphone.status = .Speaking
         } else {
